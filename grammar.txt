@@ -1,0 +1,14 @@
+
+
+
+function_stmt	  : '(' IDENT ',' IDENT ')'
+
+stmt 	          : KEYWORD:let IDENT ASSIGN (exp| FUNCTION)
+				  : IDENT function_stmt ';' 
+
+exp 		      : IDENT (('+'|'-') IDENT) ';'
+				  : INT (('+'|'-') INT) ';'
+
+FUNCTION	      : KEYWORD:fn function_stmt '{' exp '}' ';'
+
+
